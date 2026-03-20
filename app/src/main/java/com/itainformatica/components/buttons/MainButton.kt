@@ -14,7 +14,7 @@ fun MainButton(
     text: String?,
     onTap: () -> Unit,
     color: Color? = Color.Blue,
-    borderRadius: Dp? = 12.dp,
+    borderRadius: Dp? = 10.dp,
     textColor: Color? = Color.White,
 ) {
     Button(
