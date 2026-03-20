@@ -1,5 +1,6 @@
 package com.itainformatica
 
+import MainButton
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.itainformatica.ui.theme.AppitainformaticaTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +23,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppitainformaticaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    MainButton(
+                        text = "Caqui",
+                        color = Color.Black,
+                        borderRadius = 20.dp,
+                        textColor = Color.White,
+                        onTap = {},
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
