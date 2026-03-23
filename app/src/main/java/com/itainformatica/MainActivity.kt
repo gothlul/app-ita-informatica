@@ -1,12 +1,18 @@
 package com.itainformatica
 
 import MainButton
+import MainPage
+import NavBar
+import NavItem
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,32 +29,24 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppitainformaticaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    NavBar(
+                        navItems = listOf(
+                            NavItem(Icons.Default.Home, Color.Blue) { println("Home clicado") },
+                            NavItem(Icons.Default.Settings, Color.Green) { println("Settings clicado") }
+                        )
+                    )
                     MainButton(
                         text = "Caqui",
                         color = Color.Black,
-                        borderRadius = 20.dp,
+                        borderRadius = 10.dp,
                         textColor = Color.White,
                         onTap = {},
                         modifier = Modifier.padding(innerPadding)
                     )
+
+                    MainPage() { }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppitainformaticaTheme {
-        Greeting("Android")
     }
 }
