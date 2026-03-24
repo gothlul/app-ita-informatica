@@ -29,22 +29,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppitainformaticaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavBar(
-                        navItems = listOf(
-                            NavItem(Icons.Default.Home, Color.Blue) { println("Home clicado") },
-                            NavItem(Icons.Default.Settings, Color.Green) { println("Settings clicado") }
-                        )
-                    )
+                    MainPage() { }
                     MainButton(
                         text = "Caqui",
                         color = Color.Black,
-                        borderRadius = 10.dp,
+                        borderRadius = 2.dp,
                         textColor = Color.White,
                         onTap = {},
                         modifier = Modifier.padding(innerPadding)
                     )
 
-                    MainPage() { }
+
                 }
             }
         }
