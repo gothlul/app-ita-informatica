@@ -30,18 +30,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppitainformaticaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
                     MainButton(
                         text = "Texto do botão",
                         onTap = {},
                         color = Color.Blue,
                         modifier = Modifier.padding(innerPadding)
                     )
-
-                    MainPage() { }
                     CategoryFlag(
                         title = "categoria",
                         modifier = Modifier.padding(innerPadding)
                     )
+
+                    MainPage() { }
+
                 }
             }
         }
