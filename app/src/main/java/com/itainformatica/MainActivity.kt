@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.itainformatica.components.flags.CategoryFlag
 import com.itainformatica.ui.theme.AppitainformaticaTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,22 +30,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppitainformaticaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavBar(
-                        navItems = listOf(
-                            NavItem(Icons.Default.Home, Color.Blue) { println("Home clicado") },
-                            NavItem(Icons.Default.Settings, Color.Green) { println("Settings clicado") }
-                        )
-                    )
                     MainButton(
-                        text = "Caqui",
-                        color = Color.Black,
-                        borderRadius = 10.dp,
-                        textColor = Color.White,
+                        text = "Texto do botão",
                         onTap = {},
+                        color = Color.Blue,
                         modifier = Modifier.padding(innerPadding)
                     )
 
                     MainPage() { }
+                    CategoryFlag(
+                        title = "categoria",
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
