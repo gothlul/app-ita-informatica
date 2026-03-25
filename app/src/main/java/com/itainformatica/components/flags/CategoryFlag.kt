@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 
 @Composable
@@ -21,7 +20,7 @@ fun CategoryFlag(
     title: String?,
     color: Color = Color.Black,
     textColor: Color = Color.White,
-    fontSize: TextUnit = 12.sp,
+    fontSize: Float = 12f,
     fontWeight: FontWeight = FontWeight.Bold,
     borderRadius: Dp = 5.dp,
     padding: PaddingValues = PaddingValues(horizontal = 6.dp, vertical = 3.dp)
@@ -37,7 +36,7 @@ fun CategoryFlag(
         Text(
             text = title?:"",
             color = textColor,
-            fontSize = fontSize,
+            fontSize = fontSize.sp,
             fontWeight = fontWeight
         )
     }

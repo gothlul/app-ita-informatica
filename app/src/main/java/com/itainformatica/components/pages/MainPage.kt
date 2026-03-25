@@ -1,3 +1,6 @@
+package com.itainformatica.components.pages
+
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
@@ -9,7 +12,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.itainformatica.R
+import com.itainformatica.components.navbar.NavBar
+import com.itainformatica.components.navbar.NavItem
 import com.itainformatica.ui.theme.*
+
+@SuppressLint("ConfigurationScreenWidthHeight")
 
 @Composable
 fun MainPage(

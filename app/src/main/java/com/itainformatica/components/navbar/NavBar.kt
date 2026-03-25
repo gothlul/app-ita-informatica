@@ -1,3 +1,6 @@
+package com.itainformatica.components.navbar
+
+import android.annotation.SuppressLint
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.Image
@@ -15,8 +18,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
+import com.itainformatica.components.navbar.NavItem
 import com.itainformatica.ui.theme.*
 
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun NavBar(
     modifier: Modifier = Modifier,
@@ -26,7 +31,7 @@ fun NavBar(
     itemsSize: Float = 14f
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
-    var selectedIndex by remember { mutableStateOf(0) }
+    var selectedIndex by remember { mutableIntStateOf(0) }
 
     val currentPadding = padding?: PaddingValues(
         top = baseSize * 0.05f,
