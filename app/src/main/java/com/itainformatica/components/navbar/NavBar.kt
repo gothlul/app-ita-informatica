@@ -15,27 +15,31 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.unit.LayoutDirection
 import com.itainformatica.ui.theme.*
 
 @Composable
 fun NavBar(
     navItems: List<NavItem>,
     color: Color = Color.Black,
-    paddingValues: PaddingValues
+    padding: PaddingValues?,
+    itemsSize: Float = 14f
 ) {
-    var baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+    val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
     var selectedIndex by remember { mutableStateOf(0) }
+
+    val currentPadding = padding?: PaddingValues(
+        top = baseSize * 0.5f,
+        start = baseSize * 2.5f,
+        end = baseSize * 2.5f,
+        bottom = (baseSize * 4f)
+    )
 
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .background(color)
-            .padding(
-                top = baseSize * 0.5f,
-                start = baseSize * 2.5f,
-                end = baseSize * 2.5f,
-                bottom = paddingValues.calculateBottomPadding() + (baseSize * 3f)
-            )
+            .padding(currentPadding)
             .graphicsLayer(clip = false),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
@@ -48,7 +52,7 @@ fun NavBar(
 
             Surface(
                 modifier = Modifier
-                    .size(baseSize * 14f)
+                    .size(baseSize * itemsSize * 1.2f)
                     .offset(y = position)
                     .shadow(elevation, shape = RoundedCornerShape(100.dp))
                     .clickable {
@@ -60,7 +64,7 @@ fun NavBar(
                 Image(
                     painter = item.icon,
                     contentDescription = null,
-                    modifier = Modifier.size(12.dp),
+                    modifier = Modifier.size((baseSize * itemsSize)),
                     colorFilter = ColorFilter.tint(if(isSelected) color else item.iconColor)
                 )
             }

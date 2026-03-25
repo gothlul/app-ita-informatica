@@ -35,11 +35,10 @@ class MainActivity : ComponentActivity() {
                         text = "Texto do botão",
                         onTap = {},
                         color = Color.Blue,
-                        modifier = Modifier.padding(innerPadding)
+                        padding = innerPadding
                     )
                     CategoryFlag(
                         title = "categoria",
-                        modifier = Modifier.padding(innerPadding)
                     )
 
                     MainPage() { }

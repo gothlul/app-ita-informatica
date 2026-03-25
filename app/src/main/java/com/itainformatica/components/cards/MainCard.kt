@@ -18,7 +18,6 @@ fun MainCard(
     modifier: Modifier = Modifier,
     text: @Composable () -> Unit,
     image: Painter?,
-    shape: Shape = RoundedCornerShape(16.dp),
     onTap: () -> Unit,
     hasButton: Boolean? = false,
     button: @Composable () -> Unit,

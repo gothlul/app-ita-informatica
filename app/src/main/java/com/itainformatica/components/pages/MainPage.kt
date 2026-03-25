@@ -23,7 +23,7 @@ fun MainPage(
     Scaffold (
         bottomBar = {
             NavBar(
-                paddingValues = WindowInsets.navigationBars.asPaddingValues(),
+                padding = WindowInsets.navigationBars.asPaddingValues(),
                 color = Primary,
                 navItems = listOf(
                     NavItem(
