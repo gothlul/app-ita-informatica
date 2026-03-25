@@ -24,15 +24,16 @@ fun NavBar(
     color: Color = Color.Black,
     padding: PaddingValues?,
     itemsSize: Float = 14f
+
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
     var selectedIndex by remember { mutableStateOf(0) }
 
     val currentPadding = padding?: PaddingValues(
-        top = baseSize * 0.5f,
+        top = baseSize * 0.25f,
         start = baseSize * 2.5f,
         end = baseSize * 2.5f,
-        bottom = (baseSize * 4f)
+        bottom = (baseSize * 10f)
     )
 
     Row(
@@ -52,7 +53,7 @@ fun NavBar(
 
             Surface(
                 modifier = Modifier
-                    .size(baseSize * itemsSize * 1.2f)
+                    .size(baseSize * itemsSize)
                     .offset(y = position)
                     .shadow(elevation, shape = RoundedCornerShape(100.dp))
                     .clickable {
@@ -64,7 +65,8 @@ fun NavBar(
                 Image(
                     painter = item.icon,
                     contentDescription = null,
-                    modifier = Modifier.size((baseSize * itemsSize)),
+                    modifier = Modifier
+                        .padding(baseSize * 3f),
                     colorFilter = ColorFilter.tint(if(isSelected) color else item.iconColor)
                 )
             }
