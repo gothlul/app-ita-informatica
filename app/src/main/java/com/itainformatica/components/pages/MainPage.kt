@@ -1,16 +1,5 @@
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.layout.calculateEndPadding
-import androidx.compose.foundation.layout.calculateStartPadding
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -59,20 +48,19 @@ fun MainPage(
                 .fillMaxSize()
                 .padding(
                     top = innerPadding.calculateTopPadding() + (baseSize * 8f),
-                    end = padding.calculateEndPadding(LayoutDirection.Ltr),
-                    start = padding.calculateStartPadding(LayoutDirection.Ltr),
+                    end = padding.calculateEndPadding(LayoutDirection.Ltr) + (baseSize * 5f),
+                    start = padding.calculateStartPadding(LayoutDirection.Ltr) + (baseSize * 5f),
                     bottom = innerPadding.calculateBottomPadding()
                 ),
-            verticalArrangement = Arrangement.SpaceBetween,
+            verticalArrangement = Arrangement.spacedBy(baseSize * 5)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.logo_welder),
                 contentDescription = "Logo",
                 modifier = Modifier
-                    .size(width = 148.dp, height = 40.dp)
-                    .padding(bottom = baseSize * 2)
+                    .size(width = 111.dp, height = 30.dp)
             )
-
+            Spacer(modifier = Modifier.height((2.5f).dp))
             content()
 
         }

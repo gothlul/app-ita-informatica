@@ -15,7 +15,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.unit.LayoutDirection
 import com.itainformatica.ui.theme.*
 
 @Composable
@@ -40,7 +39,7 @@ fun NavBar(
         modifier = modifier
             .fillMaxWidth()
             .background(color)
-            .padding(currentPadding)
+            .padding(paddingValues = currentPadding)
             .graphicsLayer(clip = false),
         horizontalArrangement = Arrangement.SpaceEvenly
     ) {
@@ -57,7 +56,7 @@ fun NavBar(
                     .offset(y = position)
                     .shadow(
                         elevation = elevation,
-                        shape = RoundedCornerShape(100.dp)
+                        shape = RoundedCornerShape(size = 100.dp)
                     )
                     .clickable {
                         selectedIndex = index
@@ -69,7 +68,7 @@ fun NavBar(
                     painter = item.icon,
                     contentDescription = null,
                     modifier = Modifier
-                        .padding(baseSize * 3f),
+                        .padding(all = baseSize * 3f),
                     colorFilter = ColorFilter.tint(if(isSelected) color else item.iconColor)
                 )
             }

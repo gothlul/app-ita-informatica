@@ -23,7 +23,7 @@ fun ProductCard(
     Button(
         onClick = onTap,
         colors = ButtonDefaults.buttonColors(containerColor = color?:Color.Black),
-        shape = RoundedCornerShape(borderRadius?:20.dp),
+        shape = RoundedCornerShape(size = borderRadius?:20.dp),
         modifier = modifier
     ) {
         Text(
