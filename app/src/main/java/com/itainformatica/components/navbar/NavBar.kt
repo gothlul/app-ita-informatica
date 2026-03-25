@@ -20,24 +20,24 @@ import com.itainformatica.ui.theme.*
 
 @Composable
 fun NavBar(
+    modifier: Modifier = Modifier,
     navItems: List<NavItem>,
     color: Color = Color.Black,
-    padding: PaddingValues?,
+    padding: PaddingValues? = null,
     itemsSize: Float = 14f
-
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
     var selectedIndex by remember { mutableStateOf(0) }
 
     val currentPadding = padding?: PaddingValues(
-        top = baseSize * 0.25f,
+        top = baseSize * 0.05f,
         start = baseSize * 2.5f,
         end = baseSize * 2.5f,
-        bottom = (baseSize * 10f)
+        bottom = (baseSize * 14f)
     )
 
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .background(color)
             .padding(currentPadding)
@@ -47,15 +47,18 @@ fun NavBar(
         navItems.forEachIndexed { index, item ->
             val isSelected = selectedIndex == index
 
-            val elevation: Dp by animateDpAsState(if (isSelected) baseSize * 2 else 0.dp)
+            val elevation: Dp by animateDpAsState(if (isSelected) baseSize else 0.dp)
             val bgColor: Color by animateColorAsState(if (isSelected) White else Color.Transparent)
-            val position: Dp by animateDpAsState(if (isSelected) -baseSize * 6 else 0.dp)
+            val position: Dp by animateDpAsState(if (isSelected) -baseSize * 2 else 0.dp)
 
             Surface(
                 modifier = Modifier
                     .size(baseSize * itemsSize)
                     .offset(y = position)
-                    .shadow(elevation, shape = RoundedCornerShape(100.dp))
+                    .shadow(
+                        elevation = elevation,
+                        shape = RoundedCornerShape(100.dp)
+                    )
                     .clickable {
                         selectedIndex = index
                         item.onTap()
