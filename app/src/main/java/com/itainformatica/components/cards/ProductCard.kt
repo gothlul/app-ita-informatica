@@ -44,13 +44,14 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.itainformatica.R
 import com.itainformatica.components.flags.CategoryFlag
 import com.itainformatica.models.Category
-import com.itainformatica.ui.theme.White
 
 @SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
@@ -65,7 +66,8 @@ fun ProductCard(
     priceColor: Color = Color.Gray,
     borderRadius: Dp = 10.dp,
     padding: PaddingValues = PaddingValues(all = 10.dp),
-    spacing: Dp = 10.dp,
+    spacing: Dp = 5.dp,
+    fontSize: Float = 16f,
     onTap: () -> Unit,
 ) {
     val painter = image?: painterResource(id = R.drawable.no_image)
@@ -80,7 +82,12 @@ fun ProductCard(
                 clip = false
             )
             .background(containerColor, shape = RoundedCornerShape(size = borderRadius))
-            .widthIn(max = maxWidth),
+            .widthIn(max = maxWidth)
+            .clickable(
+                onClick = {
+                    onTap()
+                }
+            ),
         contentAlignment = Alignment.CenterStart
     ) {
         Column() {
@@ -109,13 +116,13 @@ fun ProductCard(
                     contentScale = if(image == null) ContentScale.Fit else ContentScale.Crop,
                     colorFilter = ColorFilter.tint(if(image == null) color.copy(alpha = 0.2f) else Color.Transparent),
                     modifier = Modifier
-                        .height(100.dp)
+                        .height(120.dp)
                 )
             }
             Box(
                 modifier = Modifier
                     .padding(
-                        top = baseSize * 5f,
+                        top = baseSize * 3f,
                         bottom = padding.calculateBottomPadding(),
                         start = padding.calculateStartPadding(LayoutDirection.Ltr),
                         end = padding.calculateEndPadding(LayoutDirection.Ltr)
@@ -134,13 +141,16 @@ fun ProductCard(
                     }
                     Row(){
                         Text(
-                            itemName
+                            itemName,
+                            maxLines = 2,
+                            fontSize = fontSize.sp,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
                     Spacer(modifier = Modifier.height(spacing))
                     Row() {
                         Text(
-                            "R$ ${price}",
+                            "R$ ${"%.2f".format(price)}",
                             modifier = Modifier
                                 .fillMaxWidth(),
                             color = priceColor,

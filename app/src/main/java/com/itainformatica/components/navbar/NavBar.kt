@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.painterResource
+import com.itainformatica.R
 import com.itainformatica.components.navbar.NavItem
 import com.itainformatica.ui.theme.*
 
@@ -50,6 +52,7 @@ fun NavBar(
     ) {
         navItems.forEachIndexed { index, item ->
             val isSelected = selectedIndex == index
+            val painter = item.icon?: painterResource(id = R.drawable.no_image)
 
             val elevation: Dp by animateDpAsState(if (isSelected) baseSize else 0.dp)
             val bgColor: Color by animateColorAsState(if (isSelected) White else Color.Transparent)
@@ -70,7 +73,7 @@ fun NavBar(
                 color = bgColor
             ) {
                 Image(
-                    painter = item.icon,
+                    painter = painter,
                     contentDescription = null,
                     modifier = Modifier
                         .padding(all = baseSize * 3f),

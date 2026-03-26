@@ -40,7 +40,7 @@ fun SeparatorFlag(
         )
         Spacer(modifier = Modifier.height(spacing))
         Box(
-            modifier = Modifier
+            modifier = modifier
                 .background(
                     color = color,
                     shape = RoundedCornerShape(topEnd = 16.dp)
