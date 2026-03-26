@@ -1,5 +1,6 @@
 package com.itainformatica.components.cards
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.core.Animatable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.Orientation
@@ -29,6 +30,7 @@ import androidx.compose.ui.unit.IntOffset
 import kotlinx.coroutines.launch
 
 
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun BottomSheet(
     modifier: Modifier = Modifier,

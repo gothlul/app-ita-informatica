@@ -1,3 +1,5 @@
+package com.itainformatica.components.buttons
+
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -27,7 +29,7 @@ fun MainButton(
         elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 8.dp
         ),
-        shape = RoundedCornerShape(borderRadius)
+        shape = RoundedCornerShape(size = borderRadius)
     ) {
         Text(
             text = text,

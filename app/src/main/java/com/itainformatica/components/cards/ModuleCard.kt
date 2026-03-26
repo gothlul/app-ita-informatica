@@ -70,7 +70,7 @@ fun ModuleCard(
                     onTap()
                 }
             )
-            .onSizeChanged() { boxSize = it }
+            .onSizeChanged { boxSize = it }
             .background(
                 brush = if (boxSize.width > 0 && boxSize.height > 0) {
                     Brush.linearGradient(

@@ -4,5 +4,7 @@ import com.itainformatica.R
 
 class Category(
     val id: Int = 0,
-    val title: String = ""
+    val title: String = "",
+    val imageUrl: String = "",
+    val onTap: () -> Unit = {}
 )

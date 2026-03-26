@@ -24,8 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
@@ -35,6 +33,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.itainformatica.R
 import com.itainformatica.components.flags.CategoryFlag
 import com.itainformatica.models.Category
@@ -45,7 +44,7 @@ fun ProductCard(
     modifier: Modifier = Modifier,
     itemName: String = "",
     price: Float = 0f,
-    image: Painter? = null,
+    imageUrl: String = "",
     categories: List<Category>,
     color: Color = Color.Black,
     containerColor: Color = Color.White,
@@ -56,7 +55,6 @@ fun ProductCard(
     fontSize: Float = 16f,
     onTap: () -> Unit,
 ) {
-    val painter = image?: painterResource(id = R.drawable.no_image)
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
     val maxWidth = LocalConfiguration.current.screenWidthDp.dp * 0.4f
 
@@ -76,7 +74,7 @@ fun ProductCard(
             ),
         contentAlignment = Alignment.CenterStart
     ) {
-        Column() {
+        Column{
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
@@ -88,13 +86,23 @@ fun ProductCard(
                         ),
                     )
             ){
-                Image(
-                    painter = painter,
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .height(120.dp)
-                )
+                if(imageUrl.isEmpty() || imageUrl == ""){
+                    Image(
+                        painter = painterResource(id = R.drawable.no_icon),
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .height(120.dp)
+                    )
+                }else{
+                    AsyncImage(
+                        model = imageUrl,
+                        contentDescription = null,
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .height(120.dp)
+                    )
+                }
             }
             Box(
                 modifier = Modifier
@@ -108,7 +116,7 @@ fun ProductCard(
                 Column(
                     verticalArrangement = Arrangement.spacedBy(spacing)
                 ) {
-                    Row(){
+                    Row{
                         categories.forEach { item ->
                             CategoryFlag(
                                 title = item.title,
@@ -116,7 +124,7 @@ fun ProductCard(
                             )
                         }
                     }
-                    Row(){
+                    Row{
                         Text(
                             itemName,
                             maxLines = 2,
@@ -125,7 +133,7 @@ fun ProductCard(
                         )
                     }
                     Spacer(modifier = Modifier.height(spacing))
-                    Row() {
+                    Row {
                         Text(
                             "R$ ${"%.2f".format(price)}",
                             modifier = Modifier

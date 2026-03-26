@@ -1,5 +1,6 @@
 package com.itainformatica.components.cards
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -22,19 +23,20 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.itainformatica.R
 
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun MainCard(
     modifier: Modifier = Modifier,
-    image: Painter? = null,
+    imageUrl: String = "",
     imageRadius: RoundedCornerShape? = null,
     imageScale: Float = 45f,
     imageAlign: Alignment = Alignment.BottomEnd,
@@ -46,7 +48,6 @@ fun MainCard(
     contentPadding: PaddingValues = PaddingValues(all = 15.dp),
     content: @Composable () -> Unit = {},
 ) {
-    val painter = image?: painterResource(id = R.drawable.no_image)
     val borderImage = imageRadius?:RoundedCornerShape(
         topStart = 1000.dp,
         bottomEnd = borderRadius
@@ -67,7 +68,7 @@ fun MainCard(
                 shape = RoundedCornerShape(size = borderRadius),
                 clip = false
             )
-            .onSizeChanged() {
+            .onSizeChanged {
                 boxSize = it
             }
             .background(
@@ -99,12 +100,21 @@ fun MainCard(
                 )
                 .align(alignment = imageAlign)
         ){
-            Image(
-                painter = painter,
-                contentDescription = null,
-                modifier = Modifier
-                    .height((baseSize * imageScale))
-            )
+            if(imageUrl.isEmpty() || imageUrl == ""){
+                Image(
+                    painter = painterResource(id = R.drawable.no_icon),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height((baseSize * imageScale))
+                )
+            }else{
+                AsyncImage(
+                    model = imageUrl,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .height((baseSize * imageScale))
+                )
+            }
         }
         Box(
             modifier = Modifier

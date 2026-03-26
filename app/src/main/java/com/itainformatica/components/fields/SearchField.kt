@@ -1,5 +1,6 @@
 package com.itainformatica.components.fields
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -30,6 +31,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun SearchField(
     modifier: Modifier = Modifier,
@@ -54,7 +56,7 @@ fun SearchField(
                 shape = RoundedCornerShape(size = borderRadius),
                 clip = false
             )
-            .background(if(currentText.isEmpty()) color else Color.White, shape = RoundedCornerShape(size = borderRadius))
+            .background(color = if(currentText.isEmpty()) color else Color.White, shape = RoundedCornerShape(size = borderRadius))
             .then(
                 other = if (width <= 0f) Modifier.fillMaxWidth() else Modifier.width(width.dp)
             ),

@@ -1,5 +1,6 @@
 package com.itainformatica.components.buttons
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.*
 import com.itainformatica.R
 
+@SuppressLint("ConfigurationScreenWidthHeight")
 @Composable
 fun IconButton(
     modifier: Modifier = Modifier,
@@ -43,7 +45,7 @@ fun IconButton(
         elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 8.dp
         ),
-        shape = RoundedCornerShape(borderRadius)
+        shape = RoundedCornerShape(size = borderRadius)
     ) {
         Image(
             painter = painter,

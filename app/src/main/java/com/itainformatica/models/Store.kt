@@ -7,5 +7,6 @@ class Store (
     val entrance: String = "",
     val neighborhood: String = "",
     val city: String = "",
+    val imageUrl: String = "",
     val inventory: List<InventoryItem> = emptyList()
 )
