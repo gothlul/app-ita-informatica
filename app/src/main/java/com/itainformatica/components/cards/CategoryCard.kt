@@ -35,7 +35,7 @@ fun CategoryCard(
     imageSize: Float = 20f,
     padding: PaddingValues = PaddingValues(all = 14.dp)
 ) {
-    val painter = image?: painterResource(id = R.drawable.no_image)
+    val painter = image?: painterResource(id = R.drawable.no_icon)
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,

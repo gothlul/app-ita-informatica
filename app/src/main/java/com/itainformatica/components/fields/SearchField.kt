@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
@@ -42,6 +43,8 @@ fun SearchField(
     spacing: Dp = 10.dp,
     onSearch: (String) -> Unit
 ) {
+    val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+    val absoluteHeight = baseSize * height
     var currentText by remember { mutableStateOf("") }
 
     Box(
@@ -67,7 +70,7 @@ fun SearchField(
                 contentDescription = "Pesquisar",
                 tint = if(currentText.isEmpty()) textColor.copy(alpha = 0.6f) else textColor ,
                 modifier = Modifier
-                    .size((height * 0.5f).dp)
+                    .size((absoluteHeight * 0.5f))
             )
             Spacer(modifier = Modifier.width(spacing))
             BasicTextField(
@@ -81,7 +84,7 @@ fun SearchField(
                     value = textColor
                 ),
                 textStyle = TextStyle(
-                    fontSize = (height * 0.35f).sp,
+                    fontSize = (absoluteHeight * 0.35f).value.sp,
                     color = Color.Black
                 ),
                 decorationBox = { innerTextField ->
@@ -89,15 +92,15 @@ fun SearchField(
                         contentAlignment = Alignment.TopStart,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(height.dp)
+                            .height(absoluteHeight)
                             .padding(vertical = padding.calculateTopPadding())
                     ) {
                         if (currentText.isEmpty()) {
                             Text(
                                 text = hint,
                                 color = textColor.copy(alpha = 0.6f),
-                                fontSize = (height * 0.35f).sp,
-                                lineHeight = (height * 0.35f).sp
+                                fontSize = (absoluteHeight * 0.35f).value.sp,
+                                lineHeight = (absoluteHeight * 0.35f).value.sp
                             )
                         }
                         innerTextField()

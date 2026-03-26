@@ -20,7 +20,6 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import com.itainformatica.R
-import com.itainformatica.components.navbar.NavItem
 import com.itainformatica.ui.theme.*
 
 @SuppressLint("ConfigurationScreenWidthHeight")
@@ -52,7 +51,7 @@ fun NavBar(
     ) {
         navItems.forEachIndexed { index, item ->
             val isSelected = selectedIndex == index
-            val painter = item.icon?: painterResource(id = R.drawable.no_image)
+            val painter = item.icon?: painterResource(id = R.drawable.no_icon)
 
             val elevation: Dp by animateDpAsState(if (isSelected) baseSize else 0.dp)
             val bgColor: Color by animateColorAsState(if (isSelected) White else Color.Transparent)

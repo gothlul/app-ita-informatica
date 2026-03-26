@@ -17,6 +17,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -25,11 +29,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.itainformatica.R
+
 
 @Composable
 fun ModuleCard(
@@ -43,9 +50,14 @@ fun ModuleCard(
     gradientColors: List<Color> = listOf(Color.Gray, Color.LightGray),
     padding: PaddingValues = PaddingValues(all = 8.dp),
     onTap: () -> Unit = {},
-    isSolid: Boolean = false
+    isSolid: Boolean = false,
 ) {
-    val painter = icon?: painterResource(id = R.drawable.no_image)
+    val painter = icon?: painterResource(id = R.drawable.no_icon)
+    var boxSize by remember {
+        mutableStateOf(
+            value = IntSize(width = 0, height = 0)
+        )
+    }
 
     Box(
         modifier = modifier
@@ -58,12 +70,17 @@ fun ModuleCard(
                     onTap()
                 }
             )
+            .onSizeChanged() { boxSize = it }
             .background(
-                brush = Brush.linearGradient(
-                    colors = gradientColors,
-                    start = Offset(x = 0f, y = 200f),
-                    end = Offset(x = 200f, y = 0f)
-                ),
+                brush = if (boxSize.width > 0 && boxSize.height > 0) {
+                    Brush.linearGradient(
+                        colors = gradientColors,
+                        start = Offset(x = 0f, y = boxSize.height.toFloat()),
+                        end = Offset(x = boxSize.width.toFloat(), y = 0f)
+                    )
+                } else {
+                    Brush.linearGradient(colors = gradientColors)
+                },
                 shape = RoundedCornerShape(size = borderRadius)
             )
             .width(100.dp)

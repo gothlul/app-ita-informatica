@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.itainformatica.components.cards.CategoryCard
+import com.itainformatica.components.cards.MainCard
 import com.itainformatica.components.cards.ModuleCard
 import com.itainformatica.components.cards.ProductCard
 import com.itainformatica.components.fields.SearchField
@@ -46,7 +47,7 @@ class MainActivity : ComponentActivity() {
                             onSearch = { searchTerm = it },
                             color = LightBlue,
                             textColor = DarkBlue,
-                            height = 40f,
+                            height = 9f,
                             width = 250f
                         )
                         Text(
@@ -55,7 +56,9 @@ class MainActivity : ComponentActivity() {
                         )
 
                         Column(
-                            modifier = Modifier.verticalScroll(scrollState)
+                            modifier = Modifier
+                                .verticalScroll(scrollState)
+                                .padding(vertical = 20.dp)
                         ) {
                             CategoryCard(
                                 image = painterResource(id = R.drawable.bag),
@@ -63,6 +66,12 @@ class MainActivity : ComponentActivity() {
                                 title = "Categoria",
                                 onTap = {}
                             )
+                            MainCard(){
+                                Column() { }
+                                Text(
+                                    "exemplo"
+                                )
+                            }
                             ProductCard(
                                 itemName = "Espantalho vc batman: HQ 1987",
                                 price = 20f,
