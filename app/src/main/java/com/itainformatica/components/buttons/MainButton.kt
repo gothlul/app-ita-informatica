@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.*
 @Composable
 fun MainButton(
     modifier: Modifier = Modifier,
-    text: String?,
+    text: String = "",
     onTap: () -> Unit,
     color: Color = Color.Black,
     textColor: Color = Color.White,
@@ -30,7 +30,7 @@ fun MainButton(
         shape = RoundedCornerShape(borderRadius)
     ) {
         Text(
-            text = text?:"",
+            text = text,
             color = textColor,
             fontSize = fontSize
         )

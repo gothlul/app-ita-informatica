@@ -1,9 +1,11 @@
 package com.itainformatica
 
+import MainButton
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
@@ -17,6 +19,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.itainformatica.components.buttons.IconButton
+import com.itainformatica.components.cards.BottomSheet
 import com.itainformatica.components.cards.CategoryCard
 import com.itainformatica.components.cards.MainCard
 import com.itainformatica.components.cards.ModuleCard
@@ -41,7 +45,8 @@ class MainActivity : ComponentActivity() {
                     val scrollState = rememberScrollState()
 
                     Column(
-                        modifier = Modifier.fillMaxHeight()
+                        modifier = Modifier.fillMaxHeight(),
+                        verticalArrangement = Arrangement.Bottom
                     ) {
                         SearchField(
                             onSearch = { searchTerm = it },
@@ -71,6 +76,17 @@ class MainActivity : ComponentActivity() {
                                 Text(
                                     "exemplo"
                                 )
+                            }
+                            MainButton(
+                                text = "botão",
+                                onTap = {},
+                            )
+                            IconButton(
+
+                            )
+                            BottomSheet(
+                            ){
+                                Text("")
                             }
                             ProductCard(
                                 itemName = "Espantalho vc batman: HQ 1987",
