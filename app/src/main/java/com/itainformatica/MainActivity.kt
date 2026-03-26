@@ -33,9 +33,12 @@ import com.itainformatica.ui.theme.AppitainformaticaTheme
 import com.itainformatica.ui.theme.DarkBlue
 import com.itainformatica.ui.theme.LightBlue
 
+
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        JsonData.loadFromAssets(this)
         enableEdgeToEdge()
         setContent {
             AppitainformaticaTheme {
@@ -94,7 +97,6 @@ class MainActivity : ComponentActivity() {
                                 categories = listOf(
                                     Category(
                                         title = "Categoria",
-                                        onTap = {}
                                     )
                                 ),
                             ){}
@@ -111,3 +113,4 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
