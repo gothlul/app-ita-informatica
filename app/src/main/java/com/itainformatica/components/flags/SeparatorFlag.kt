@@ -15,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
@@ -26,9 +25,9 @@ fun SeparatorFlag(
     title: String = "",
     color: Color = Color.Gray,
     textColor: Color = Color.Black,
-    fontSize: Float = 12f,
+    fontSize: Float = 20f,
     fontWeight: FontWeight = FontWeight.Medium,
-    lineWidth: Float = 100f,
+    lineWidth: Float = 150f,
     spacing: Dp = 5.dp
 ){
     Column (
@@ -42,9 +41,12 @@ fun SeparatorFlag(
         Spacer(modifier = Modifier.height(spacing))
         Box(
             modifier = Modifier
-                .background(color = color)
+                .background(
+                    color = color,
+                    shape = RoundedCornerShape(topEnd = 16.dp)
+                )
                 .width(lineWidth.dp)
-                .height(5.dp)
+                .height((2.5f).dp),
         )
     }
 }

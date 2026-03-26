@@ -18,21 +18,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.itainformatica.R
 
 @Composable
 fun CategoryCard(
     modifier: Modifier = Modifier,
     title: String = "",
-    image: Painter,
+    image: Painter? = null,
     onTap: () -> Unit,
     borderRadius: Dp = 100.dp,
     fontSize: Float = 12f,
     imageSize: Float = 20f,
     padding: PaddingValues = PaddingValues(all = 14.dp)
 ) {
+    val painter = image?: painterResource(id = R.drawable.no_image)
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
@@ -52,8 +56,8 @@ fun CategoryCard(
             contentAlignment = Alignment.CenterStart
         ){
             Image(
-                painter = image,
-                contentDescription = "Logo",
+                painter = painter,
+                contentDescription = null,
                 modifier = Modifier
                     .size(width = imageSize.dp, height = imageSize.dp)
             )

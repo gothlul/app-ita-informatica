@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -15,8 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.itainformatica.components.cards.CategoryCard
+import com.itainformatica.components.cards.ProductCard
 import com.itainformatica.components.fields.SearchField
+import com.itainformatica.components.flags.SeparatorFlag
 import com.itainformatica.components.pages.MainPage
+import com.itainformatica.models.Category
 import com.itainformatica.ui.theme.AppitainformaticaTheme
 import com.itainformatica.ui.theme.DarkBlue
 import com.itainformatica.ui.theme.LightBlue
@@ -29,26 +34,45 @@ class MainActivity : ComponentActivity() {
             AppitainformaticaTheme {
                 MainPage(
                 ) {
-                    var query by remember { mutableStateOf("") }
+                    var searchTerm by remember { mutableStateOf("") }
+                    val scrollState = rememberScrollState()
 
                     Column() {
                         SearchField(
-                            onSearch = { query = it },
+                            onSearch = { searchTerm = it },
                             color = LightBlue,
                             textColor = DarkBlue,
                             height = 40f,
                             width = 250f
                         )
                         Text(
-                            text = "Você pesquisou: $query",
-                            modifier = Modifier.padding(16.dp)
+                            text = "Você pesquisou: $searchTerm",
+                            modifier = Modifier.padding(all = 16.dp)
                         )
-                        CategoryCard(
-                            image = painterResource(id = R.drawable.bag),
-                            imageSize = 35f,
-                            title = "Categoria",
-                            onTap = {}
-                        )
+
+                        Column(
+                            modifier = Modifier.verticalScroll(scrollState)
+                        ) {
+                            CategoryCard(
+                                image = painterResource(id = R.drawable.bag),
+                                imageSize = 35f,
+                                title = "Categoria",
+                                onTap = {}
+                            )
+                            ProductCard(
+                                itemName = "Espantalho vc batman: HQ 1987",
+                                price = 20f,
+                                categories = listOf(
+                                    Category(
+                                        title = "Categoria",
+                                        onTap = {}
+                                    )
+                                ),
+                            ){}
+                            SeparatorFlag(
+                                title = "Categorias"
+                            )
+                        }
                     }
                 }
             }

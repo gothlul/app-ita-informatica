@@ -1,10 +1,9 @@
 package com.itainformatica.models
 
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
+import com.itainformatica.R
 
 class Category(
-    val image: Painter,
+    val imageRes: Int = R.drawable.no_image,
     val title: String = "",
     val onTap: () -> Unit
-){}
+)

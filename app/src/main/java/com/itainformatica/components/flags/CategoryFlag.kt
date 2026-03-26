@@ -20,10 +20,10 @@ fun CategoryFlag(
     title: String?,
     color: Color = Color.Black,
     textColor: Color = Color.White,
-    fontSize: Float = 12f,
+    fontSize: Float = 8f,
     fontWeight: FontWeight = FontWeight.Bold,
     borderRadius: Dp = 5.dp,
-    padding: PaddingValues = PaddingValues(horizontal = 6.dp, vertical = 3.dp)
+    padding: PaddingValues = PaddingValues(horizontal = 8.dp, vertical = 1.dp)
 ){
     Box(
         modifier = modifier
