@@ -31,6 +31,8 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
@@ -43,10 +45,12 @@ fun ModuleCard(
     modifier: Modifier = Modifier,
     title: String = "",
     icon: Painter? = null,
-    fontSize: Float = 16f,
+    fontSize: Float = 10f,
+    textColor: Color = Color.White,
     borderRadius: Dp = 10.dp,
-    spacing: Dp = 8.dp,
+    spacing: Dp = 10.dp,
     iconColor: Color = Color.Black,
+    fontWeight: FontWeight = FontWeight.SemiBold,
     gradientColors: List<Color> = listOf(Color.Gray, Color.LightGray),
     padding: PaddingValues = PaddingValues(all = 8.dp),
     onTap: () -> Unit = {},
@@ -116,7 +120,9 @@ fun ModuleCard(
             Text(
                 title,
                 fontSize = fontSize.sp,
-                color = iconColor
+                color = textColor,
+                fontWeight = fontWeight,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }

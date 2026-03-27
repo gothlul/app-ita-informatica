@@ -1,6 +1,7 @@
 package com.itainformatica.components.pages
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
@@ -8,9 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import com.itainformatica.InstitutionalPage
 import com.itainformatica.R
 import com.itainformatica.components.navbar.NavBar
 import com.itainformatica.components.navbar.NavItem
@@ -25,6 +28,7 @@ fun MainPage(
     content: @Composable () -> Unit
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+    val currentContext = LocalContext.current
 
     Scaffold (
         modifier = modifier
@@ -45,7 +49,10 @@ fun MainPage(
                     NavItem(
                         icon = painterResource(id = R.drawable.processor),
                         iconColor = DarkBlue,
-                        onTap = {})
+                        onTap = {
+                            val intent = Intent(currentContext, InstitutionalPage::class.java)
+                            currentContext.startActivity(intent)
+                        })
                 )
             )
         }

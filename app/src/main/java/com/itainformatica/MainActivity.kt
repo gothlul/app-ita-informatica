@@ -97,7 +97,7 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.padding(all = 16.dp)
                             )
                         }
-                        Spacer(modifier = Modifier.height(20.dp))
+                        Spacer(modifier = Modifier.height(baseSize * 6))
                         LazyVerticalGrid (
                             columns = GridCells.Fixed(2),
                             verticalArrangement = Arrangement.spacedBy(8.dp),
@@ -144,13 +144,16 @@ class MainActivity : ComponentActivity() {
 
                             }
                             item(span = { GridItemSpan(maxLineSpan) }) {
-                                Spacer(modifier = Modifier.height(baseSize * 3))
+                                Spacer(modifier = Modifier.height(baseSize * 5))
                             }
                             item(span = { GridItemSpan(maxLineSpan) }) {
                                 SeparatorFlag(
                                     title = "Categorias",
                                     color = SimpleBlue
                                 )
+                            }
+                            item(span = { GridItemSpan(maxLineSpan) }) {
+                                Spacer(modifier = Modifier.height(baseSize * 3))
                             }
                             item(span = { GridItemSpan(maxLineSpan) }) {
                                 Row(
@@ -169,10 +172,16 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                             item(span = { GridItemSpan(maxLineSpan) }) {
+                                Spacer(modifier = Modifier.height(baseSize * 5))
+                            }
+                            item(span = { GridItemSpan(maxLineSpan) }) {
                                 SeparatorFlag(
                                     title = "Destaques",
                                     color = SimpleBlue
                                 )
+                            }
+                            item(span = { GridItemSpan(maxLineSpan) }) {
+                                Spacer(modifier = Modifier.height(baseSize * 3))
                             }
                             items(count = JsonData.products.size){ index ->
                                 val item = JsonData.products[index]
