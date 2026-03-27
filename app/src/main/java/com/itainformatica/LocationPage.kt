@@ -21,9 +21,14 @@ import com.itainformatica.ui.theme.AppitainformaticaTheme
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import com.itainformatica.components.buttons.MainButton
+import com.itainformatica.ui.theme.DarkBlue
 
 class LocationPage : ComponentActivity() {
 
@@ -31,11 +36,12 @@ class LocationPage : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+
+            val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+
             AppitainformaticaTheme {
                 MainPage(padding = PaddingValues(0.dp)) {
                     Box(modifier = Modifier.fillMaxSize()) {
-
-                        Text("Conteúdo que fica atrás do Sheet", modifier = Modifier.fillMaxSize())
 
                         val context = LocalContext.current
 
@@ -51,19 +57,17 @@ class LocationPage : ComponentActivity() {
                                 painter = painterResource(id = R.drawable.lojas),
                                 contentDescription = "lojas",
                             )
-
-
-                            Button(
-                                onClick = {
-                                    val gmmIntentUri =
-                                        Uri.parse("geo:-22.9971829,-46.8704619?q=Ita Informática")
+                            Spacer(modifier = Modifier.height(baseSize * 5))
+                            MainButton(
+                                text = "Abrir o mapa",
+                                color = DarkBlue,
+                                onTap = {
+                                    val gmmIntentUri = Uri.parse("geo:-22.9971829,-46.8704619?q=Ita Informática")
                                     val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
                                     mapIntent.setPackage("com.google.android.apps.maps")
                                     context.startActivity(mapIntent)
                                 }
-                            ) {
-                                Text("Abrir no Maps")
-                            }
+                            )
 
                         }
 

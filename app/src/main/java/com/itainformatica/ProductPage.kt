@@ -168,7 +168,7 @@ class ProductPage : ComponentActivity() {
                                                     icon = painterResource(R.drawable.icon_call),
                                                     color = SimpleBlue,
                                                     onTap = {
-                                                        val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:11944954089"))
+                                                        val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:11944954089"))
                                                         currentContext.startActivity(intent)
                                                     },
                                                 )
