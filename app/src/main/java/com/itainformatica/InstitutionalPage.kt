@@ -69,13 +69,13 @@ class InstitutionalPage : ComponentActivity() {
                                 withStyle(
                                     style = SpanStyle(
                                         color = Color(0xFF0F71D2),
-                                        fontWeight = FontWeight.SemiBold
+                                        fontWeight = FontWeight.Medium
                                     )
                                 ) {
                                     append("Ita informática")
                                 }
                             },
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.Medium,
                             fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
@@ -89,7 +89,7 @@ class InstitutionalPage : ComponentActivity() {
                         Spacer(modifier = Modifier.height(baseSize * 15))
                         Text(
                             text = "O que nos motiva",
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.Medium,
                             fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
@@ -100,7 +100,7 @@ class InstitutionalPage : ComponentActivity() {
                                 withStyle(
                                     style = SpanStyle(
                                         color = Color(0xF00F71D2),
-                                        fontWeight = FontWeight.Bold
+                                        fontWeight = FontWeight.Medium
                                     )
                                 ) {
                                     append("Ita informática")
@@ -150,7 +150,7 @@ class InstitutionalPage : ComponentActivity() {
                         Spacer(modifier = Modifier.height(baseSize * 15))
                         Text(
                             text = "Visite nosso site e torne-se parceiro",
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.Medium,
                             fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
