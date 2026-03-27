@@ -119,7 +119,7 @@ fun ProductCard(
                     Row{
                         categories.forEach { item ->
                             CategoryFlag(
-                                title = item.title,
+                                title = item.name,
                                 color = color,
                             )
                         }
