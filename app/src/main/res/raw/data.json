@@ -1,17 +1,19 @@
 {
   "categories": [
-    { "id": 1, "name": "Componentes", "imageUrl": "" },
-    { "id": 2, "name": "Hardwares", "imageUrl": "" },
-    { "id": 3, "name": "Placas", "imageUrl": "" },
-    { "id": 4, "name": "Periféricos", "imageUrl": "" },
-    { "id": 5, "name": "Consumíveis", "imageUrl": "" }
+    { "id": 1, "name": "Componentes", "imageUrl": "https://www.makerhero.com/wp-content/uploads/2017/07/Sensor-de-Umidade-do-Solo-Higrometro-9SS19-foto-prod-01.png" },
+    { "id": 2, "name": "Hardwares", "imageUrl": "https://s2-techtudo.glbimg.com/b3v-mCTmam09F1C0Wjsau93UiyY=/0x0:695x444/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/3/f/fjBhJkS0WABWAvB4MHzw/2015-10-23-video.png" },
+    { "id": 3, "name": "Placas", "imageUrl": "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/b/6/b650m-h2.jpg" },
+    { "id": 4, "name": "Periféricos", "imageUrl": "https://edifier.com.br/media/catalog/product/f/o/fone-bluetooth-edifier-w600bt-pret_1.jpg" },
+    { "id": 5, "name": "Consumíveis", "imageUrl": "https://casadosoldador.com.br/files/products_images/12238/tubo-de-estanho-em-fio-22g-073-1200-cobix-casa-do-soldador-01.webp" }
   ],
   "products": [
     {
       "id": 1,
       "name": "Memória RAM 8GB",
       "price": 250.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGs4_a_erp72OgWZe54qM9t8TlengeLiGuIQ&s"
+      ],
       "categories": [
         { "id": 1, "name": "Componentes" },
         { "id": 2, "name": "Hardwares" }
@@ -22,7 +24,9 @@
       "id": 2,
       "name": "SSD 512GB",
       "price": 450.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOQ6R_i3zS9LkEROPq9k5l2jpfjRYaMHnRiQ&s"
+      ],
       "categories": [
         { "id": 1, "name": "Componentes" },
         { "id": 2, "name": "Hardwares" }
@@ -33,7 +37,9 @@
       "id": 3,
       "name": "Placa de Vídeo RTX 3060",
       "price": 3500.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/61jN35sc4jS._AC_UF894,1000_QL80_.jpg"
+      ],
       "categories": [
         { "id": 3, "name": "Placas" }
       ],
@@ -43,7 +49,9 @@
       "id": 4,
       "name": "Monitor 24\" LED",
       "price": 900.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAXYybukcBi4O6uriA-sCpzxRgxBljsqLzwA&s"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -53,7 +61,9 @@
       "id": 5,
       "name": "Teclado Mecânico",
       "price": 300.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/61FR1BJ71IL.jpg"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -63,7 +73,9 @@
       "id": 6,
       "name": "Mouse Gamer",
       "price": 150.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/51jkp7NXp9L.jpg"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -73,7 +85,9 @@
       "id": 7,
       "name": "Processador Intel i7",
       "price": 2000.0,
-      "images": [],
+      "images": [
+        "https://img.terabyteshop.com.br/produto/g/processador-intel-core-i7-14700-34-ghz-54ghz-turbo-14-geracao-20-cores-28-threads-lga-1700-bx8071514700_184939.png"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" }
       ],
@@ -81,9 +95,11 @@
     },
     {
       "id": 8,
-      "name": "Cooler CPU",
+      "name": "Water Cooler CPU",
       "price": 120.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/411J6-A5gxL._SX342_SY445_QL70_ML2_.jpg"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" },
         { "id": 1, "name": "Componentes" }
@@ -94,7 +110,9 @@
       "id": 9,
       "name": "Fonte 650W",
       "price": 400.0,
-      "images": [],
+      "images": [
+        "https://cdn.dooca.store/151246/products/tdhhv9v1vn09hq2amts7uosvpykwfgor50a6_640x640+fill_ffffff.jpg?v=1761320865&webp=0"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" }
       ],
@@ -104,7 +122,9 @@
       "id": 10,
       "name": "Placa-mãe ASUS",
       "price": 1100.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQFvE6FlBn7cTQV-QRDkmTnMJKupkNOcS6OeTlDi-tcYY4m3zbtvbYMpnaQxXBOjjpCYJ-BCwVbEXBh5nFwBJlLN-FEncPDlP8SbPdma3RQYQ7m6zYftEq0Guo"
+      ],
       "categories": [
         { "id": 3, "name": "Placas" },
         { "id": 2, "name": "Hardwares" }
@@ -115,7 +135,9 @@
       "id": 11,
       "name": "Cabo HDMI",
       "price": 25.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ8CCMcxqAuciavFOpmdJY2raQ2c8MC0HDz6onTKg4fWDarINhw6Tc-hO9_O5V3VvT9P0ZL7FnMPD_i0LJD-GzQyFkbv3nF"
+      ],
       "categories": [
         { "id": 5, "name": "Consumíveis" }
       ],
@@ -125,7 +147,9 @@
       "id": 12,
       "name": "Pendrive 64GB",
       "price": 80.0,
-      "images": [],
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRBF6HNC4jo22-IUq5uEIteDfW_UtS1m91zmz75oamXtqaCQcBTHwjIAMo6hgH6akL9-bDa0IfCxAWGqRqariqKXhZ8bZJdepZ2vGEdHVyr4kj0lN4xtGLB"
+      ],
       "categories": [
         { "id": 5, "name": "Consumíveis" }
       ],
@@ -135,7 +159,9 @@
       "id": 13,
       "name": "Headset Gamer",
       "price": 220.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/61Vu8zV3QUL._AC_SY300_SX300_QL70_ML2_.jpg"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -145,7 +171,9 @@
       "id": 14,
       "name": "Webcam Full HD",
       "price": 180.0,
-      "images": [],
+      "images": [
+        "https://http2.mlstatic.com/D_NQ_NP_807092-MLA100966388363_122025-O.webp"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -155,7 +183,9 @@
       "id": 15,
       "name": "HD Externo 1TB",
       "price": 300.0,
-      "images": [],
+      "images": [
+        "https://netcomputadores.com.br/dbimg/produtos/stgx1000400_120092_g.jpg"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" }
       ],
@@ -165,7 +195,9 @@
       "id": 16,
       "name": "Cartucho de Impressora",
       "price": 150.0,
-      "images": [],
+      "images": [
+        "https://images.tcdn.com.br/img/img_prod/406359/kit_cartucho_de_tinta_compativel_para_hp_21_27_56_e_22_28_57_para_impressora_f4180_f380_j3680_d2360__622_1_865e368befce89c74d0589af8fb49853.jpg"
+      ],
       "categories": [
         { "id": 5, "name": "Consumíveis" }
       ],
@@ -175,7 +207,9 @@
       "id": 17,
       "name": "Cadeira Gamer",
       "price": 900.0,
-      "images": [],
+      "images": [
+        "https://www.comfy.com.br/media/catalog/product/c/a/cadeira_gamer_xperience_combat_terracota_base_girato_ria_1.webp"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -185,7 +219,9 @@
       "id": 18,
       "name": "Placa de Som",
       "price": 350.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/61W-OC07JoL._AC_UF894,1000_QL80_.jpg"
+      ],
       "categories": [
         { "id": 3, "name": "Placas" }
       ],
@@ -195,7 +231,9 @@
       "id": 19,
       "name": "Teclado Bluetooth",
       "price": 250.0,
-      "images": [],
+      "images": [
+        "https://cdn.awsli.com.br/600x450/2582/2582939/produto/241576820c9d261b024.jpg"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" }
       ],
@@ -205,7 +243,9 @@
       "id": 20,
       "name": "Mousepad XL",
       "price": 90.0,
-      "images": [],
+      "images": [
+        "https://m.media-amazon.com/images/I/718w7JtPUCL._AC_SX522_.jpg"
+      ],
       "categories": [
         { "id": 4, "name": "Periféricos" },
         { "id": 5, "name": "Consumíveis" }
@@ -216,7 +256,9 @@
       "id": 21,
       "name": "Fonte 750W",
       "price": 500.0,
-      "images": [],
+      "images": [
+        "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/f/o/fonte-corsair-modular-cp-9020078-ww-cs750m-12039-mlb5898774821_022014-o.jpg"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" }
       ],
@@ -226,7 +268,9 @@
       "id": 22,
       "name": "Placa de Rede Gigabit",
       "price": 150.0,
-      "images": [],
+      "images": [
+        "https://mirandacomputacao.jetassets.com.br/produto/43853-principal.png"
+      ],
       "categories": [
         { "id": 3, "name": "Placas" },
         { "id": 1, "name": "Componentes" }
@@ -237,7 +281,9 @@
       "id": 23,
       "name": "SSD NVMe 1TB",
       "price": 800.0,
-      "images": [],
+      "images": [
+        "https://mirandacomputacao.jetassets.com.br/produto/48936-principal.png"
+      ],
       "categories": [
         { "id": 2, "name": "Hardwares" }
       ],
@@ -247,7 +293,9 @@
       "id": 24,
       "name": "Gabinete ATX",
       "price": 400.0,
-      "images": [],
+      "images": [
+        "https://cdn.awsli.com.br/2500x2500/2539/2539199/produto/265876315/1-sg0b2zz3rk.png"
+      ],
       "categories": [
         { "id": 1, "name": "Componentes" }
       ],

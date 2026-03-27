@@ -33,7 +33,7 @@ import com.itainformatica.R
 fun CategoryCard(
     modifier: Modifier = Modifier,
     title: String = "",
-    imageUrl: String = "",
+    imageUrl: String? = null,
     onTap: () -> Unit,
     borderRadius: Dp = 100.dp,
     fontSize: Float = 10f,
@@ -61,7 +61,7 @@ fun CategoryCard(
                 .padding(paddingValues = padding),
             contentAlignment = Alignment.CenterStart
         ){
-            if(imageUrl.isEmpty() || imageUrl == ""){
+            if(imageUrl == null || imageUrl == ""){
                 Image(
                     painter = painterResource(id = R.drawable.no_icon),
                     contentDescription = null,

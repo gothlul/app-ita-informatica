@@ -6,7 +6,7 @@ import kotlinx.serialization.*
 class Category(
     val id: Int = 0,
     val name: String = "",
-    @Transient
     val imageUrl: String = "",
+    @Transient
     val onTap: () -> Unit = {}
 )

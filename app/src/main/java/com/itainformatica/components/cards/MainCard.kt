@@ -38,7 +38,7 @@ import com.itainformatica.R
 @Composable
 fun MainCard(
     modifier: Modifier = Modifier,
-    imageUrl: String = "",
+    imageUrl: String? = null,
     imageRadius: RoundedCornerShape? = null,
     imageScale: Float = 35f,
     imageAlign: Alignment = Alignment.BottomEnd,
@@ -102,7 +102,7 @@ fun MainCard(
                 )
                 .align(alignment = imageAlign)
         ){
-            if(imageUrl.isEmpty() || imageUrl == ""){
+            if(imageUrl == null || imageUrl == ""){
                 Image(
                     painter = painterResource(id = R.drawable.no_image),
                     contentDescription = null,

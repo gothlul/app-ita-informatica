@@ -47,7 +47,7 @@ fun ProductCard(
     modifier: Modifier = Modifier,
     itemName: String = "",
     price: Float = 0f,
-    imageUrl: String = "",
+    imageUrl: String? = null,
     categories: List<Category>,
     color: Color = Color.Black,
     containerColor: Color = Color.White,
@@ -92,7 +92,7 @@ fun ProductCard(
                         ),
                     )
             ){
-                if(imageUrl.isEmpty() || imageUrl == ""){
+                if(imageUrl == null || imageUrl == ""){
                     Image(
                         painter = painterResource(id = R.drawable.no_image),
                         contentDescription = null,

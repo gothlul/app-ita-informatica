@@ -180,7 +180,8 @@ class MainActivity : ComponentActivity() {
                                 ProductCard(
                                     itemName = item.name,
                                     price = item.price,
-                                    categories = item.categories
+                                    categories = item.categories,
+                                    imageUrl = item.images.firstOrNull()
                                 ) {}
                             }
                         }
