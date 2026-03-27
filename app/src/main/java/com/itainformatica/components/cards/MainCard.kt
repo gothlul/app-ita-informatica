@@ -102,7 +102,7 @@ fun MainCard(
         ){
             if(imageUrl.isEmpty() || imageUrl == ""){
                 Image(
-                    painter = painterResource(id = R.drawable.no_icon),
+                    painter = painterResource(id = R.drawable.no_image),
                     contentDescription = null,
                     modifier = Modifier
                         .height((baseSize * imageScale))

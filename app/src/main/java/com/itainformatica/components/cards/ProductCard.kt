@@ -88,7 +88,7 @@ fun ProductCard(
             ){
                 if(imageUrl.isEmpty() || imageUrl == ""){
                     Image(
-                        painter = painterResource(id = R.drawable.no_icon),
+                        painter = painterResource(id = R.drawable.no_image),
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
@@ -119,7 +119,7 @@ fun ProductCard(
                     Row{
                         categories.forEach { item ->
                             CategoryFlag(
-                                title = item.title,
+                                title = item.name,
                                 color = color,
                             )
                         }

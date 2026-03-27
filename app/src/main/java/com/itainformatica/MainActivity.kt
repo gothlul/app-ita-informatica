@@ -5,10 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Text
@@ -17,10 +19,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.itainformatica.components.cards.CategoryCard
 import com.itainformatica.components.cards.MainCard
 import com.itainformatica.components.cards.ModuleCard
@@ -33,6 +40,7 @@ import com.itainformatica.models.Category
 import com.itainformatica.ui.theme.AppitainformaticaTheme
 import com.itainformatica.ui.theme.DarkBlue
 import com.itainformatica.ui.theme.LightBlue
+import com.itainformatica.ui.theme.Primary
 import com.itainformatica.ui.theme.Secondary
 import com.itainformatica.ui.theme.SimpleBlue
 
@@ -78,20 +86,43 @@ class MainActivity : ComponentActivity() {
                         Column(
                             modifier = Modifier
                                 .verticalScroll(scrollState)
-                                .padding(vertical = 20.dp)
+                                .padding(vertical = 20.dp),
+                            verticalArrangement = Arrangement.spacedBy(20.dp)
                         ) {
-                            MainCard(){
-                                Text(
-                                    text = buildAnnotatedString{
-                                        append("Mês do consumidor na ".uppercase())
-
-                                        withStyle(
-                                            style = SpanStyle(color = Secondary)) {
-                                            append("ita".uppercase())
-                                        }
-                                    },
-                                    modifier = Modifier.padding(all = 16.dp)
+                            MainCard(
+                                imageUrl = context.resources.getIdentifier(imageName, "drawable", context.packageName),
+                                gradientColors = listOf(
+                                    DarkBlue,
+                                    Primary
                                 )
+                            ){
+                                Box(
+                                    modifier = Modifier.width(230.dp),
+                                ){
+                                    Text(
+                                        text = buildAnnotatedString{
+                                            withStyle(
+                                                style = SpanStyle(
+                                                    color = Color.White,
+                                                    baselineShift = BaselineShift(0.4f)
+                                                )
+                                            ) {
+                                                append("Mês do consumidor na ".uppercase())
+                                            }
+
+                                            withStyle(
+                                                style = SpanStyle(
+                                                    color = Secondary,
+                                                    fontSize = 24.sp,
+                                                    fontWeight = FontWeight.Bold
+                                                )
+                                            ) {
+                                                append("ita".uppercase())
+                                            }
+                                        },
+                                        modifier = Modifier.padding(all = 16.dp)
+                                    )
+                                }
                             }
                             SeparatorFlag(
                                 title = "Categorias"
@@ -101,7 +132,7 @@ class MainActivity : ComponentActivity() {
                                     CategoryCard(
                                         imageUrl = item.imageUrl,
                                         imageSize = 35f,
-                                        title = item.title,
+                                        title = item.name,
                                         onTap = item.onTap
                                     )
                                 }
@@ -115,7 +146,7 @@ class MainActivity : ComponentActivity() {
                                 price = 20f,
                                 categories = listOf(
                                     Category(
-                                        title = "Categoria",
+                                        name = "Categoria",
                                     )
                                 ),
                             ){}

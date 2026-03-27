@@ -2,6 +2,7 @@ package com.itainformatica.database
 
 import android.content.Context
 import com.itainformatica.models.Category
+import com.itainformatica.models.JsonFile
 import com.itainformatica.models.Product
 import com.itainformatica.models.Store
 import kotlinx.serialization.json.Json
@@ -26,7 +27,7 @@ object JsonData {
             inputStream.close()
 
             val jsonString = String(buffer)
-            val json = Json.decodeFromString<JsonData>(jsonString)
+            val json = Json.decodeFromString<JsonFile>(jsonString)
 
             categories = json.categories
             products = json.products
