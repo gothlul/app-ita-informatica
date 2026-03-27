@@ -88,7 +88,7 @@ fun ProductCard(
             ){
                 if(imageUrl.isEmpty() || imageUrl == ""){
                     Image(
-                        painter = painterResource(id = R.drawable.no_icon),
+                        painter = painterResource(id = R.drawable.no_image),
                         contentDescription = null,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
