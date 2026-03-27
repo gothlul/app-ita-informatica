@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,7 +19,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,10 +36,13 @@ fun CategoryCard(
     imageUrl: String = "",
     onTap: () -> Unit,
     borderRadius: Dp = 100.dp,
-    fontSize: Float = 12f,
-    imageSize: Float = 20f,
+    fontSize: Float = 10f,
+    imageSize: Float = 18f,
     padding: PaddingValues = PaddingValues(all = 14.dp)
 ) {
+
+    val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
@@ -73,7 +81,9 @@ fun CategoryCard(
         Spacer(modifier = Modifier.height((fontSize * 0.5).dp))
         Text(
             title,
-            fontSize = fontSize.sp
+            fontSize = fontSize.sp,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.width(baseSize * 20)
         )
     }
 }

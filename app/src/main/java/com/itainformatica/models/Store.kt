@@ -1,5 +1,8 @@
 package com.itainformatica.models
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 class Store (
     val id: Int = 0,
     val name: String = "",
