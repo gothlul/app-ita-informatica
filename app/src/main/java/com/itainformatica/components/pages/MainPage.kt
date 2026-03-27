@@ -14,6 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.itainformatica.InstitutionalPage
+import com.itainformatica.LocationPage
 import com.itainformatica.R
 import com.itainformatica.components.navbar.NavBar
 import com.itainformatica.components.navbar.NavItem
@@ -45,7 +46,10 @@ fun MainPage(
                     NavItem(
                         icon = painterResource(id = R.drawable.compass),
                         iconColor = DarkBlue,
-                        onTap = {}),
+                        onTap = {
+                            val intent = Intent(currentContext, LocationPage::class.java)
+                            currentContext.startActivity(intent)
+                        }),
                     NavItem(
                         icon = painterResource(id = R.drawable.processor),
                         iconColor = DarkBlue,

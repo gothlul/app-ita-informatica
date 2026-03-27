@@ -42,12 +42,13 @@ fun BottomSheet(
     content: @Composable () -> Unit
 ){
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
+    val baseHeight = LocalConfiguration.current.screenHeightDp.dp * 0.01f
 
 
     val density = LocalDensity.current
 
-    val minHeight = with(receiver = density) { (baseSize * bottomLimit).toPx() }
-    val maxHeight = with(receiver = density) { (baseSize * topLimit).toPx() }
+    val minHeight = with(receiver = density) { (baseHeight * bottomLimit).toPx() }
+    val maxHeight = with(receiver = density) { (baseHeight * topLimit).toPx() }
 
     val height = remember { Animatable(initialValue = minHeight) }
     val scope = rememberCoroutineScope()
@@ -55,12 +56,6 @@ fun BottomSheet(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .offset {
-                IntOffset(
-                    x = 0,
-                    y = (with(density) { (baseSize * 100f).toPx() } - height.value).toInt()
-                )
-            }
     ){
         Box(
             modifier = modifier
@@ -77,7 +72,10 @@ fun BottomSheet(
                         topStart = borderRadius,
                         topEnd = borderRadius
                     )
-                ),
+                )
+                .offset {
+                    IntOffset(0, (maxHeight - height.value).toInt())
+                },
             contentAlignment = Alignment.CenterStart
         ) {
             Column(

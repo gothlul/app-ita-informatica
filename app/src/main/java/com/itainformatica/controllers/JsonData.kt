@@ -1,4 +1,4 @@
-package com.itainformatica.database
+package com.itainformatica.controllers
 
 import android.content.Context
 import com.itainformatica.R
@@ -7,7 +7,6 @@ import com.itainformatica.models.JsonFile
 import com.itainformatica.models.Product
 import com.itainformatica.models.Store
 import kotlinx.serialization.json.Json
-import java.io.IOException
 
 object JsonData {
     var categories: List<Category> = emptyList()
