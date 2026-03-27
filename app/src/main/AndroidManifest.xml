@@ -36,6 +36,7 @@
 
         <activity android:name=".InstitutionalPage" android:exported="false" />
         <activity android:name=".LocationPage" android:exported="false" />
+        <activity android:name=".CategoryPage" android:exported="false" />
     </application>
 
 </manifest>

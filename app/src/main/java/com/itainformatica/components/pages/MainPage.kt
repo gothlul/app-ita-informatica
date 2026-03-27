@@ -42,7 +42,9 @@ fun MainPage(
                     NavItem(
                         icon = painterResource(id = R.drawable.bag),
                         iconColor = DarkBlue,
-                        onTap = {}),
+                        onTap = {
+
+                        }),
                     NavItem(
                         icon = painterResource(id = R.drawable.compass),
                         iconColor = DarkBlue,

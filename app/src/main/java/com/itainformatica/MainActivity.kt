@@ -1,5 +1,6 @@
 package com.itainformatica
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -159,7 +160,12 @@ class MainActivity : ComponentActivity() {
                                             imageUrl = item.imageUrl,
                                             imageSize = 35f,
                                             title = item.name,
-                                            onTap = item.onTap
+                                            onTap = {
+                                                val intent = Intent(this@MainActivity, CategoryPage::class.java).apply {
+                                                    putExtra("CATEGORY_NAME", item.name)
+                                                }
+                                                startActivity(intent)
+                                            }
                                         )
                                     }
                                 }
