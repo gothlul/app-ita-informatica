@@ -1,6 +1,8 @@
 package com.itainformatica.models
 
-@kotlinx.serialization.Serializable
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class JsonFile(
     val categories: List<Category> = emptyList(),
     val products: List<Product> = emptyList(),

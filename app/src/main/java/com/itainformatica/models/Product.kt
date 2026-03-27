@@ -1,7 +1,8 @@
 package com.itainformatica.models
 
-import com.itainformatica.R
+import kotlinx.serialization.Serializable
 
+@Serializable
 class Product (
     val id: Int = 0,
     val name: String = "",

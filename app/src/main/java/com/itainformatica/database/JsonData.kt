@@ -1,6 +1,7 @@
 package com.itainformatica.database
 
 import android.content.Context
+import com.itainformatica.R
 import com.itainformatica.models.Category
 import com.itainformatica.models.JsonFile
 import com.itainformatica.models.Product
@@ -16,28 +17,25 @@ object JsonData {
     var stores: List<Store> = emptyList()
         private set
 
-
-    fun loadJson(context: Context, fileName: String = "data.json") {
+    fun loadJson(context: Context) {
         try {
-            val inputStream = context.assets.open(fileName)
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
+            val inputStream = context.resources.openRawResource(R.raw.data)
+            val jsonString = inputStream.bufferedReader().use { it.readText() }
 
-            inputStream.read(buffer)
-            inputStream.close()
+            val jsonConfig = Json {
+                ignoreUnknownKeys = true
+                coerceInputValues = true
+            }
 
-            val jsonString = String(buffer)
-            val json = Json.decodeFromString<JsonFile>(jsonString)
+            val jsonFile = jsonConfig.decodeFromString<JsonFile>(jsonString)
 
-            categories = json.categories
-            products = json.products
-            stores = json.stores
+            categories = jsonFile.categories
+            products = jsonFile.products
+            stores = jsonFile.stores
 
-        } catch (e: IOException) {
+        } catch (e: Exception) {
             e.printStackTrace()
-            categories = emptyList()
-            products = emptyList()
-            stores = emptyList()
+            android.util.Log.e("JsonData", "Erro ao carregar JSON: ${e.message}")
         }
     }
 }

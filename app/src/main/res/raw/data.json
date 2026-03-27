@@ -1,0 +1,331 @@
+{
+  "categories": [
+    { "id": 1, "name": "Componentes", "imageUrl": "" },
+    { "id": 2, "name": "Hardwares", "imageUrl": "" },
+    { "id": 3, "name": "Placas", "imageUrl": "" },
+    { "id": 4, "name": "Periféricos", "imageUrl": "" },
+    { "id": 5, "name": "Consumíveis", "imageUrl": "" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Memória RAM 8GB",
+      "price": 250.0,
+      "images": [],
+      "categories": [
+        { "id": 1, "name": "Componentes" },
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.5
+    },
+    {
+      "id": 2,
+      "name": "SSD 512GB",
+      "price": 450.0,
+      "images": [],
+      "categories": [
+        { "id": 1, "name": "Componentes" },
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.8
+    },
+    {
+      "id": 3,
+      "name": "Placa de Vídeo RTX 3060",
+      "price": 3500.0,
+      "images": [],
+      "categories": [
+        { "id": 3, "name": "Placas" }
+      ],
+      "score": 4.7
+    },
+    {
+      "id": 4,
+      "name": "Monitor 24\" LED",
+      "price": 900.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.2
+    },
+    {
+      "id": 5,
+      "name": "Teclado Mecânico",
+      "price": 300.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.4
+    },
+    {
+      "id": 6,
+      "name": "Mouse Gamer",
+      "price": 150.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.3
+    },
+    {
+      "id": 7,
+      "name": "Processador Intel i7",
+      "price": 2000.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.6
+    },
+    {
+      "id": 8,
+      "name": "Cooler CPU",
+      "price": 120.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" },
+        { "id": 1, "name": "Componentes" }
+      ],
+      "score": 4.1
+    },
+    {
+      "id": 9,
+      "name": "Fonte 650W",
+      "price": 400.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.5
+    },
+    {
+      "id": 10,
+      "name": "Placa-mãe ASUS",
+      "price": 1100.0,
+      "images": [],
+      "categories": [
+        { "id": 3, "name": "Placas" },
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.4
+    },
+    {
+      "id": 11,
+      "name": "Cabo HDMI",
+      "price": 25.0,
+      "images": [],
+      "categories": [
+        { "id": 5, "name": "Consumíveis" }
+      ],
+      "score": 4.0
+    },
+    {
+      "id": 12,
+      "name": "Pendrive 64GB",
+      "price": 80.0,
+      "images": [],
+      "categories": [
+        { "id": 5, "name": "Consumíveis" }
+      ],
+      "score": 4.2
+    },
+    {
+      "id": 13,
+      "name": "Headset Gamer",
+      "price": 220.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.5
+    },
+    {
+      "id": 14,
+      "name": "Webcam Full HD",
+      "price": 180.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.3
+    },
+    {
+      "id": 15,
+      "name": "HD Externo 1TB",
+      "price": 300.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.2
+    },
+    {
+      "id": 16,
+      "name": "Cartucho de Impressora",
+      "price": 150.0,
+      "images": [],
+      "categories": [
+        { "id": 5, "name": "Consumíveis" }
+      ],
+      "score": 4.0
+    },
+    {
+      "id": 17,
+      "name": "Cadeira Gamer",
+      "price": 900.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.6
+    },
+    {
+      "id": 18,
+      "name": "Placa de Som",
+      "price": 350.0,
+      "images": [],
+      "categories": [
+        { "id": 3, "name": "Placas" }
+      ],
+      "score": 4.1
+    },
+    {
+      "id": 19,
+      "name": "Teclado Bluetooth",
+      "price": 250.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" }
+      ],
+      "score": 4.3
+    },
+    {
+      "id": 20,
+      "name": "Mousepad XL",
+      "price": 90.0,
+      "images": [],
+      "categories": [
+        { "id": 4, "name": "Periféricos" },
+        { "id": 5, "name": "Consumíveis" }
+      ],
+      "score": 4.2
+    },
+    {
+      "id": 21,
+      "name": "Fonte 750W",
+      "price": 500.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.5
+    },
+    {
+      "id": 22,
+      "name": "Placa de Rede Gigabit",
+      "price": 150.0,
+      "images": [],
+      "categories": [
+        { "id": 3, "name": "Placas" },
+        { "id": 1, "name": "Componentes" }
+      ],
+      "score": 4.2
+    },
+    {
+      "id": 23,
+      "name": "SSD NVMe 1TB",
+      "price": 800.0,
+      "images": [],
+      "categories": [
+        { "id": 2, "name": "Hardwares" }
+      ],
+      "score": 4.7
+    },
+    {
+      "id": 24,
+      "name": "Gabinete ATX",
+      "price": 400.0,
+      "images": [],
+      "categories": [
+        { "id": 1, "name": "Componentes" }
+      ],
+      "score": 4.3
+    }
+  ],
+  "stores": [
+    {
+      "id": 1,
+      "name": "Loja Central",
+      "addressNumber": 123,
+      "entrance": "A",
+      "neighborhood": "Centro",
+      "city": "Cidade A",
+      "imageUrl": "",
+      "inventory": [
+        { "quantity": 5, "product": { "id": 1, "name": "Memória RAM 8GB" } },
+        { "quantity": 10, "product": { "id": 2, "name": "SSD 512GB" } },
+        { "quantity": 3, "product": { "id": 3, "name": "Placa de Vídeo RTX 3060" } },
+        { "quantity": 7, "product": { "id": 4, "name": "Monitor 24\" LED" } },
+        { "quantity": 6, "product": { "id": 5, "name": "Teclado Mecânico" } },
+        { "quantity": 4, "product": { "id": 6, "name": "Mouse Gamer" } },
+        { "quantity": 8, "product": { "id": 7, "name": "Processador Intel i7" } },
+        { "quantity": 12, "product": { "id": 8, "name": "Cooler CPU" } },
+        { "quantity": 2, "product": { "id": 9, "name": "Fonte 650W" } }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Loja Norte",
+      "addressNumber": 45,
+      "entrance": "B",
+      "neighborhood": "Norte",
+      "city": "Cidade B",
+      "imageUrl": "",
+      "inventory": [
+        { "quantity": 8, "product": { "id": 10, "name": "Placa-mãe ASUS" } },
+        { "quantity": 5, "product": { "id": 11, "name": "Cabo HDMI" } },
+        { "quantity": 3, "product": { "id": 12, "name": "Pendrive 64GB" } },
+        { "quantity": 7, "product": { "id": 13, "name": "Headset Gamer" } },
+        { "quantity": 6, "product": { "id": 14, "name": "Webcam Full HD" } },
+        { "quantity": 4, "product": { "id": 15, "name": "HD Externo 1TB" } },
+        { "quantity": 8, "product": { "id": 16, "name": "Cartucho de Impressora" } },
+        { "quantity": 12, "product": { "id": 17, "name": "Cadeira Gamer" } },
+        { "quantity": 2, "product": { "id": 18, "name": "Placa de Som" } }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Loja Sul",
+      "addressNumber": 210,
+      "entrance": "C",
+      "neighborhood": "Sul",
+      "city": "Cidade C",
+      "imageUrl": "",
+      "inventory": [
+        { "quantity": 5, "product": { "id": 1, "name": "Memória RAM 8GB" } },
+        { "quantity": 6, "product": { "id": 3, "name": "Placa de Vídeo RTX 3060" } },
+        { "quantity": 3, "product": { "id": 5, "name": "Teclado Mecânico" } },
+        { "quantity": 7, "product": { "id": 7, "name": "Processador Intel i7" } },
+        { "quantity": 9, "product": { "id": 9, "name": "Fonte 650W" } },
+        { "quantity": 4, "product": { "id": 11, "name": "Cabo HDMI" } },
+        { "quantity": 2, "product": { "id": 13, "name": "Headset Gamer" } },
+        { "quantity": 8, "product": { "id": 15, "name": "HD Externo 1TB" } },
+        { "quantity": 6, "product": { "id": 17, "name": "Cadeira Gamer" } }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Loja Leste",
+      "addressNumber": 77,
+      "entrance": "D",
+      "neighborhood": "Leste",
+      "city": "Cidade D",
+      "imageUrl": "",
+      "inventory": [
+        { "quantity": 5, "product": { "id": 2} }
+        ]
+    }
+  ]
+}

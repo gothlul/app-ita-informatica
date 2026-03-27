@@ -65,7 +65,7 @@ fun SearchField(
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .padding(horizontal = padding.calculateStartPadding(LayoutDirection.Ltr))
+                .padding(horizontal = if(padding.calculateStartPadding(LayoutDirection.Ltr) > 0.dp) padding.calculateStartPadding(LayoutDirection.Ltr) else 16.dp)
         ) {
             Icon(
                 imageVector = Icons.Filled.Search,
