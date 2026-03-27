@@ -75,8 +75,8 @@ class InstitutionalPage : ComponentActivity() {
                                     append("Ita informática")
                                 }
                             },
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = (baseSize * 4).value.sp
+                            fontWeight = FontWeight.Bold,
+                            fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
                         Text(
@@ -89,8 +89,8 @@ class InstitutionalPage : ComponentActivity() {
                         Spacer(modifier = Modifier.height(baseSize * 15))
                         Text(
                             text = "O que nos motiva",
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = (baseSize * 4).value.sp
+                            fontWeight = FontWeight.Bold,
+                            fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
                         Text(
@@ -149,9 +149,9 @@ class InstitutionalPage : ComponentActivity() {
                         }
                         Spacer(modifier = Modifier.height(baseSize * 15))
                         Text(
-                            text = "Visite nosso site",
-                            fontWeight = FontWeight.SemiBold,
-                            fontSize = (baseSize * 4).value.sp
+                            text = "Visite nosso site e torne-se parceiro",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = (baseSize * 3.5f).value.sp
                         )
                         Spacer(modifier = Modifier.height(baseSize * 3))
                         MainCard (
