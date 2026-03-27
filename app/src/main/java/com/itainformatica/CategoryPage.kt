@@ -1,5 +1,6 @@
 package com.itainformatica
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -78,8 +79,14 @@ class CategoryPage : ComponentActivity() {
                                 itemName = item.name,
                                 price = item.price,
                                 categories = item.categories,
-                                imageUrl = item.images.firstOrNull()
-                            ) {}
+                                imageUrl = item.images.firstOrNull(),
+                                onTap = {
+                                    val intent = Intent(this@CategoryPage, ProductPage::class.java).apply {
+                                        putExtra("PRODUCT_ID", item.id)
+                                    }
+                                    startActivity(intent)
+                                }
+                            )
 
                         }
                     }

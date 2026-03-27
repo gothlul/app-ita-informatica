@@ -189,8 +189,14 @@ class MainActivity : ComponentActivity() {
                                     itemName = item.name,
                                     price = item.price,
                                     categories = item.categories,
-                                    imageUrl = item.images.firstOrNull()
-                                ) {}
+                                    imageUrl = item.images.firstOrNull(),
+                                    onTap = {
+                                        val intent = Intent(this@MainActivity, ProductPage::class.java).apply {
+                                            putExtra("PRODUCT_ID", item.id)
+                                        }
+                                        startActivity(intent)
+                                    }
+                                )
                             }
                         }
                     }

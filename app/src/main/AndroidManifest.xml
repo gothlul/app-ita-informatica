@@ -16,11 +16,11 @@
         android:roundIcon="@mipmap/icon_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Appitainformatica">
-        <service
-            android:name=".LocationController"
-            android:foregroundServiceType="location"
-            android:enabled="true"
-            android:exported="false" />
+<!--        <service-->
+<!--            android:name=".LocationController"-->
+<!--            android:foregroundServiceType="location"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="false" />-->
 
         <activity
             android:name=".MainActivity"
@@ -34,6 +34,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ProductPage" android:exported="false" />
         <activity android:name=".InstitutionalPage" android:exported="false" />
         <activity android:name=".LocationPage" android:exported="false" />
         <activity android:name=".CategoryPage" android:exported="false" />
