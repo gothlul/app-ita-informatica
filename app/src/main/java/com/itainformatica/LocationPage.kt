@@ -34,10 +34,7 @@ fun LocationPage(context: Context) {
             verticalArrangement = Arrangement.Center
         ) {
 
-            Image(
-                painter = painterResource(id = R.drawable.lojas),
-                contentDescription = "lojas",
-            )
+
             Spacer(modifier = Modifier.height(baseSize * 5))
             MainButton(
                 text = "Abrir o mapa",

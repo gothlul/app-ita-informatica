@@ -95,7 +95,7 @@ fun ModuleCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(100.dp)
-                    .offset(y = (-35).dp)
+                    .offset(y = (-30).dp)
                     .background(
                         color = Color.White,
                         shape = RoundedCornerShape(bottomEnd = 50.dp, bottomStart = 50.dp)
@@ -114,7 +114,7 @@ fun ModuleCard(
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(iconColor),
                 modifier = Modifier
-                    .height(40.dp)
+                    .height(35.dp)
             )
             Spacer(modifier = Modifier.height(spacing))
             Text(

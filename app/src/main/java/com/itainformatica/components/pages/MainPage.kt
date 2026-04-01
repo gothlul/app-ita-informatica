@@ -30,7 +30,32 @@ import com.itainformatica.ui.theme.*
 fun MainPage(
     modifier: Modifier = Modifier,
     padding: PaddingValues = PaddingValues(horizontal = 24.dp),
-    content: @Composable () -> Unit
+    bottomBar: @Composable () -> Unit = {
+        NavBar(
+            color = Primary,
+            navItems = listOf(
+                NavItem(
+                    icon = painterResource(id = R.drawable.bag),
+                    iconColor = DarkBlue,
+                    onTap = {
+                        NavController.setNavState(Screen.HOME)
+                    }),
+                NavItem(
+                    icon = painterResource(id = R.drawable.compass),
+                    iconColor = DarkBlue,
+                    onTap = {
+                        NavController.setNavState(Screen.LOCATION)
+                    }),
+                NavItem(
+                    icon = painterResource(id = R.drawable.processor),
+                    iconColor = DarkBlue,
+                    onTap = {
+                        NavController.setNavState(Screen.INSTITUTIONAL)
+                    })
+            )
+        )
+    },
+    content: @Composable () -> Unit,
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
 
@@ -38,31 +63,7 @@ fun MainPage(
         modifier = modifier
             .fillMaxSize(),
         containerColor = Color.White,
-        bottomBar = {
-            NavBar(
-                color = Primary,
-                navItems = listOf(
-                    NavItem(
-                        icon = painterResource(id = R.drawable.bag),
-                        iconColor = DarkBlue,
-                        onTap = {
-                            NavController.setNavState(Screen.HOME)
-                        }),
-                    NavItem(
-                        icon = painterResource(id = R.drawable.compass),
-                        iconColor = DarkBlue,
-                        onTap = {
-                            NavController.setNavState(Screen.LOCATION)
-                        }),
-                    NavItem(
-                        icon = painterResource(id = R.drawable.processor),
-                        iconColor = DarkBlue,
-                        onTap = {
-                            NavController.setNavState(Screen.INSTITUTIONAL)
-                        })
-                )
-            )
-        }
+        bottomBar = bottomBar
     ){ innerPadding ->
         Column(
             modifier = Modifier

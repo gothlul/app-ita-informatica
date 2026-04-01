@@ -1,5 +1,6 @@
 package com.itainformatica
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -41,6 +42,8 @@ import com.itainformatica.ui.theme.Secondary
 import com.itainformatica.ui.theme.SimpleBlue
 
 class ProductPage : ComponentActivity() {
+    @SuppressLint("ConfigurationScreenWidthHeight")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val id = intent.getIntExtra("PRODUCT_ID", -1)
 
@@ -64,6 +67,7 @@ class ProductPage : ComponentActivity() {
                 println("Item aberto: ${currentItem}")
 
                 MainPage(
+                    bottomBar = {}
                 ) {
                     Box{
                         if(imageUrl == null || imageUrl == ""){

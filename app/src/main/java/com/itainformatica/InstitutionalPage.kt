@@ -74,7 +74,7 @@ fun InstitutionalPage(context: Context) {
                 }
             },
             fontWeight = FontWeight.Medium,
-            fontSize = (baseSize * 3.5f).value.sp
+            fontSize = 16.sp
         )
         Spacer(modifier = Modifier.height(baseSize * 3))
         Text(
@@ -88,7 +88,7 @@ fun InstitutionalPage(context: Context) {
         Text(
             text = "O que nos motiva",
             fontWeight = FontWeight.Medium,
-            fontSize = (baseSize * 3.5f).value.sp
+            fontSize = 16.sp
         )
         Spacer(modifier = Modifier.height(baseSize * 3))
         Text(
@@ -149,7 +149,7 @@ fun InstitutionalPage(context: Context) {
         Text(
             text = "Visite nosso site e torne-se parceiro",
             fontWeight = FontWeight.Medium,
-            fontSize = (baseSize * 3.5f).value.sp
+            fontSize = 16.sp
         )
         Spacer(modifier = Modifier.height(baseSize * 3))
         MainCard (
@@ -186,7 +186,7 @@ fun InstitutionalPage(context: Context) {
                         withStyle(
                             style = SpanStyle(
                                 color = Color.White,
-                                fontSize = 24.sp,
+                                fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold
                             )
                         ) {

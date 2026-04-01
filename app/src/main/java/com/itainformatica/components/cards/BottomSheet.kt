@@ -44,7 +44,6 @@ fun BottomSheet(
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
     val baseHeight = LocalConfiguration.current.screenHeightDp.dp * 0.01f
 
-
     val density = LocalDensity.current
 
     val minHeight = with(receiver = density) { (baseHeight * bottomLimit).toPx() }

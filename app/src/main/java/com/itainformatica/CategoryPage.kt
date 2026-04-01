@@ -1,5 +1,6 @@
 package com.itainformatica
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -28,6 +29,8 @@ import com.itainformatica.ui.theme.AppitainformaticaTheme
 import com.itainformatica.ui.theme.DarkBlue
 
 class CategoryPage : ComponentActivity() {
+    @SuppressLint("ConfigurationScreenWidthHeight")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val categoryName = intent.getStringExtra("CATEGORY_NAME") ?: "Error"
 
@@ -44,6 +47,7 @@ class CategoryPage : ComponentActivity() {
 
             AppitainformaticaTheme {
                 MainPage(
+                    bottomBar = {}
                 ){
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(baseSize * 5f),
