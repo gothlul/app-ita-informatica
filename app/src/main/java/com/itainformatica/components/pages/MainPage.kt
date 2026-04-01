@@ -1,6 +1,7 @@
 package com.itainformatica.components.pages
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -19,6 +20,8 @@ import com.itainformatica.MainActivity
 import com.itainformatica.R
 import com.itainformatica.components.navbar.NavBar
 import com.itainformatica.components.navbar.NavItem
+import com.itainformatica.controllers.NavController
+import com.itainformatica.controllers.Screen
 import com.itainformatica.ui.theme.*
 
 @SuppressLint("ConfigurationScreenWidthHeight")
@@ -30,7 +33,6 @@ fun MainPage(
     content: @Composable () -> Unit
 ) {
     val baseSize = LocalConfiguration.current.screenWidthDp.dp * 0.01f
-    val currentContext = LocalContext.current
 
     Scaffold (
         modifier = modifier
@@ -44,22 +46,19 @@ fun MainPage(
                         icon = painterResource(id = R.drawable.bag),
                         iconColor = DarkBlue,
                         onTap = {
-                            val intent = Intent(currentContext, MainActivity::class.java)
-                            currentContext.startActivity(intent)
+                            NavController.setNavState(Screen.HOME)
                         }),
                     NavItem(
                         icon = painterResource(id = R.drawable.compass),
                         iconColor = DarkBlue,
                         onTap = {
-                            val intent = Intent(currentContext, LocationPage::class.java)
-                            currentContext.startActivity(intent)
+                            NavController.setNavState(Screen.LOCATION)
                         }),
                     NavItem(
                         icon = painterResource(id = R.drawable.processor),
                         iconColor = DarkBlue,
                         onTap = {
-                            val intent = Intent(currentContext, InstitutionalPage::class.java)
-                            currentContext.startActivity(intent)
+                            NavController.setNavState(Screen.INSTITUTIONAL)
                         })
                 )
             )
